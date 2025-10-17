@@ -5,7 +5,6 @@
 
 void setup() {
 
-  // set up pins 2 to 7 as outputs
   for (int i = 2; i <= 7; i++) {
     pinMode(i, OUTPUT);
   }
@@ -37,7 +36,6 @@ effect_7();
 
 }
 
-//left to right and right to left
 void effect_1()
 {
 for(int i=2; i<8; i++){
@@ -68,27 +66,26 @@ delay(t1);
 
 void effect_2()
 {
-int count = 7; // keeps track of second LED movement
+int count = 7; 
 
-  // move first LED from left to right and second from right to left
   for (int i = 2; i < 7; i++) {
     clear();
-    digitalWrite(i, HIGH);      // chaser 1
-    digitalWrite(count, HIGH); // chaser 2
+    digitalWrite(i, HIGH);      
+    digitalWrite(count, HIGH); 
     count--;
-    // stop LEDs from appearing to stand still in the middle
+   
     if (count != 4) {
       delay(t2);
     }
   }
 
-  // move first LED from right to left and second LED from left to right
+  
   for (int i = 7; i > 2; i--) {
     clear();
-    digitalWrite(i, HIGH);      // chaser 1
-    digitalWrite(count, HIGH); // chaser 2
+    digitalWrite(i, HIGH);     
+    digitalWrite(count, HIGH); 
     count++;
-    // stop LEDs from appearing to stand still in the middle
+   
     if (count != 5) {
       delay(t2);
     }
@@ -280,7 +277,7 @@ for(int k = 7; k>2; k--){
 }
 }
 
-// function to switch all LEDs off
+
 void clear(void)
 {
   for (int i = 2; i <= 7; i++) {
